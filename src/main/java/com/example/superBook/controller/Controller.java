@@ -4,10 +4,7 @@ import com.example.superBook.model.Book;
 import com.example.superBook.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
@@ -23,5 +20,11 @@ public class Controller {
         public Book addBook(@RequestBody Book book) {
             return bookService.addBookDetails(book);
         }
+    @GetMapping(value = "/getBook/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+         public Book getBook(@PathVariable int id){
+        return bookService.getBooks(id);
+
+    }
+
 
 }
