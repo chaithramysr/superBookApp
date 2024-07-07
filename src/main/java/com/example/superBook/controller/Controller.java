@@ -23,7 +23,6 @@ public class Controller {
     @GetMapping(value = "/getBook/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
          public Book getBook(@PathVariable int id){
         return bookService.getBooks(id);
-
     }
 
 
